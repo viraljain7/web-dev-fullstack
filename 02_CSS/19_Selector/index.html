@@ -3,7 +3,205 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CSS Selectors Guide</title>
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --background-color: #f5f7fa;
+        --text-color: #333;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .example {
+        background-color: #f0f4f8;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 5px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>CSS Selectors Guide</h1>
+
+      <h2>Universal Selector (*)</h2>
+      <ul>
+        <li>Selects all elements</li>
+        <li>
+          Example:
+          <div class="example">* { margin: 0; }</div>
+        </li>
+      </ul>
+
+      <h2>Type Selector</h2>
+      <ul>
+        <li>Selects all elements of the specified type</li>
+        <li>
+          Example:
+          <div class="example">p { color: blue; }</div>
+        </li>
+      </ul>
+
+      <h2>Class Selector (.)</h2>
+      <ul>
+        <li>Selects elements with the specified class</li>
+        <li>
+          Example:
+          <div class="example">.highlight { background-color: yellow; }</div>
+        </li>
+      </ul>
+
+      <h2>ID Selector (#)</h2>
+      <ul>
+        <li>Selects the element with the specified ID</li>
+        <li>
+          Example:
+          <div class="example">#header { font-size: 24px; }</div>
+        </li>
+      </ul>
+
+      <h2>Attribute Selector ([])</h2>
+      <ul>
+        <li>Selects elements with the specified attribute</li>
+        <li>
+          Example:
+          <div class="example">[type="text"] { border: 1px solid gray; }</div>
+        </li>
+      </ul>
+
+      <h2>Descendant Selector (space)</h2>
+      <ul>
+        <li>Selects all descendants of a specified element</li>
+        <li>
+          Example:
+          <div class="example">div p { margin-bottom: 10px; }</div>
+        </li>
+      </ul>
+
+      <h2>Child Selector (>)</h2>
+      <ul>
+        <li>Selects direct children of a specified element</li>
+        <li>
+          Example:
+          <div class="example">ul > li { list-style-type: square; }</div>
+        </li>
+      </ul>
+
+      <h2>Adjacent Sibling Selector (+)</h2>
+      <ul>
+        <li>Selects the element that directly follows another</li>
+        <li>
+          Example:
+          <div class="example">h2 + p { font-weight: bold; }</div>
+        </li>
+      </ul>
+
+      <h2>General Sibling Selector (~)</h2>
+      <ul>
+        <li>Selects all siblings that follow a specified element</li>
+        <li>
+          Example:
+          <div class="example">h2 ~ p { color: gray; }</div>
+        </li>
+      </ul>
+
+      <h2>Pseudo-class Selectors (:)</h2>
+      <ul>
+        <li>Selects elements based on a certain state</li>
+        <li>
+          Example:
+          <div class="example">a:hover { text-decoration: underline; }</div>
+        </li>
+      </ul>
+
+      <h2>Pseudo-element Selectors (::)</h2>
+      <ul>
+        <li>Selects and styles a part of an element</li>
+        <li>
+          Example:
+          <div class="example">p::first-line { font-variant: small-caps; }</div>
+        </li>
+      </ul>
+
+      <h2>Grouping Selector (,)</h2>
+      <ul>
+        <li>Applies the same styles to multiple selectors</li>
+        <li>
+          Example:
+          <div class="example">
+            h1, h2, h3 { font-family: Arial, sans-serif; }
+          </div>
+        </li>
+      </ul>
+
+      <h2>Combinators Selector</h2>
+      <ul>
+        <li>Combines other selectors to create more specific selections</li>
+        <li>
+          Example:
+          <div class="example">div.container > p { line-height: 1.5; }</div>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>
